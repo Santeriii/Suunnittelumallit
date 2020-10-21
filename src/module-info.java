@@ -1,0 +1,2 @@
+module suunnittelumallit_1 {
+}
