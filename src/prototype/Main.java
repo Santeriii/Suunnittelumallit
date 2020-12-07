@@ -18,6 +18,13 @@ public class Main {
         clocks.add(anotherDigitalClock);
 
         cloneAndCompare(clocks, clocksCopy);
+        
+        digi.hour = 20;
+        
+        clocks.removeAll(clocks);
+        clocks.add(digi);
+        clocks.add(anotherDigitalClock);
+        cloneAndCompare(clocks, clocksCopy);
     }
 
     private static void cloneAndCompare(List<Clock> clocks, List<Clock> clocksCopy) {

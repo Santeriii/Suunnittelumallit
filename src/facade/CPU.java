@@ -4,14 +4,8 @@ import java.util.Scanner;
 
 public class CPU {
 
-	public void Freeze(Memory memory, int size, HDD hdd) {
-		memory.Load(hdd, size);
+	public void processData(Character toBeProcessed) {
+		System.out.println("processed the following data: " + toBeProcessed);
 	}
-	
-	
-	/*void Jump(int position) {
-		memory.Load(hdd, position)
-	}
-	  void Execute();*/
 	
 }

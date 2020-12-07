@@ -4,18 +4,19 @@ public class Computer {
 	
 	private CPU cpu;
 	private Memory memory;
-	private HDD hdd;
+	private HardDrive hdd;
 	
-	public Computer(CPU cpu, Memory memory, HDD hdd) {
+	public Computer(CPU cpu, Memory memory, HardDrive hdd) {
 		this.cpu = cpu;
 		this.memory = memory;
 		this.hdd = hdd;
 	}
 	
-	  void Start() {
-	    cpu.Freeze(memory, 4, hdd);
-	    memory.Load(hdd, 8);
-	    /*cpu.Jump(kBootAddress);
-	    cpu.Execute();*/
-	  }
+	public void run() {
+		int index = 0;
+		while (true) {
+			cpu.processData(memory.load(hdd.readdata(index)));
+			index++;
+		}
+    }
 }
