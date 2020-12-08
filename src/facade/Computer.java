@@ -2,21 +2,20 @@ package facade;
 
 public class Computer {
 	
-	private CPU cpu;
-	private Memory memory;
-	private HardDrive hdd;
-	
-	public Computer(CPU cpu, Memory memory, HardDrive hdd) {
-		this.cpu = cpu;
-		this.memory = memory;
-		this.hdd = hdd;
-	}
-	
-	public void run() {
-		int index = 0;
-		while (true) {
-			cpu.processData(memory.load(hdd.readdata(index)));
-			index++;
-		}
+	private final CPU processor;
+    private final Memory ram;
+    private final HardDrive hd;
+
+    public Computer() {
+        this.processor = new CPU();
+        this.ram = new Memory();
+        this.hd = new HardDrive();
+    }
+
+    public void start() {
+        processor.freeze();
+        ram.load(0xc154e5, hd.read(100, 1024));
+        processor.jump(0x000);
+        processor.execute();
     }
 }

@@ -4,15 +4,9 @@ import java.util.ArrayList;
 
 public class HardDrive {
 	
-	private ArrayList<Character> data;
-	
-	public HardDrive(ArrayList<Character> data) {
-		this.data = data;
-	}
-	
-	public Character readdata(int index) {
-		System.out.println("reading data at index: " + index);
-		return data.get(index);
-	}
+	public byte[] read(long lba, int size) {
+        System.out.println("Hard drive reading at " + lba + " with size " + size);
+        return new byte[1024];
+    }
 	
 }

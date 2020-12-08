@@ -4,8 +4,18 @@ import java.util.Scanner;
 
 public class CPU {
 
-	public void processData(Character toBeProcessed) {
-		System.out.println("processed the following data: " + toBeProcessed);
-	}
-	
+	long pos;
+
+    public void freeze() {
+        System.out.println("CPU Froze");
+    }
+
+    public void jump(long position) {
+        System.out.println("CPU jump to " + position);
+        this.pos = position;
+    }
+
+    public void execute() {
+        System.out.println("CPU Running");
+    }
 }
